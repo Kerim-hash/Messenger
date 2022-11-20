@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import cookie from "cookie_js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 

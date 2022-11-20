@@ -15,7 +15,7 @@ import Content from "./Content";
 
 function Main({ user }) {
   // socket content and send user id to socket server
-  const socket = io("ws://localhost:8000");
+  const socket = io("ws://messenger-8ttn3ycaf-kerim-frontend.vercel.app/");
   useEffect(() => {
     socket.emit("addUser", user?._id);
   }, [socket, user?._id]);

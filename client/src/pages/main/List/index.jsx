@@ -24,7 +24,7 @@ import { StyledBadge } from "../../../components/Card/StyledBadge";
 import { useNavigate } from "react-router-dom";
 
 const List = () => {
-  const { conversation, setConversation, user, socket, setCurrentConversation} =
+  const { conversation, setConversation, user, socket, setCurrentConversation } =
     useContext(MessagesContext);
 
   const classes = useStylesAside();

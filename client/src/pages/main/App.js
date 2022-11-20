@@ -15,7 +15,7 @@ import Content from "./Content";
 
 function Main({ user }) {
   // socket content and send user id to socket server
-  const socket = io("ws://messenger-8ttn3ycaf-kerim-frontend.vercel.app/");
+  const socket = io("https://twitterchat-node-2020.herokuapp.com/");
   useEffect(() => {
     socket.emit("addUser", user?._id);
   }, [socket, user?._id]);
@@ -56,7 +56,7 @@ function Main({ user }) {
     instance
       .get("/conversation")
       .then(({ data }) => setConversation(data.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
   }, []);
 
   useEffect(() => {
@@ -71,12 +71,12 @@ function Main({ user }) {
 
   useEffect(() => {
     if (CurrentConversation?._id) {
-      setLoading(true)
+      setLoading(true);
       instance
         .get(`/message/${CurrentConversation?._id}`)
         .then(({ data }) => setMessages(data.data))
         .catch((err) => console.log(err))
-        .finally(() => setLoading(false))
+        .finally(() =>  setLoading(false))
         
     }
   }, [CurrentConversation]);

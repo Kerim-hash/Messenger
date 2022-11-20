@@ -52,12 +52,9 @@ const Login = () => {
     instance
       .post("/auth/register", data)
       .then(({ data }) => {
-        cookie.set("token", data.token);
-        instance.defaults.headers.Authorization = `Bearer ${data.token}`;
-        localStorage.setItem("user", JSON.stringify(data.user));
         setResponse({ success: true, message: data.message  });
         setTimeout(() => {
-          navigate("/");
+          navigate("/login");
         }, 1500);
       })
       .catch((err) => {
